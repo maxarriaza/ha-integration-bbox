@@ -1,0 +1,32 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration Bbox",
+        "data": {
+          "password": "Mot de passe"
+        }
+      }
+    },
+    "error": {
+      "invalid_password_error": "Mot de passe incorrect",
+      "rate_limit_error": "Maximum de tentative atteint"
+    }
+  },
+  "config_subentries": {
+    "host_tracker": {
+      "initiate_flow": {
+        "user": "Ajouter un traceur"
+      },
+      "step": {
+        "user": {
+          "title": "Configuration du traceur",
+          "description": "Ajout d'un appareil à suivre via l'addresse MAC",
+          "data": {
+            "mac_address": "Addresse MAC"
+          }
+        }
+      }
+    }
+  }
+}

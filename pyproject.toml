@@ -1,0 +1,23 @@
+[project]
+name = "ha-integration-bbox"
+version = "0.0.0"
+description = "Bbox Home Assistant integration"
+readme = "README.md"
+requires-python = ">=3.13.2"
+dependencies = [
+    "aiobbox==0.3.1",
+]
+
+[dependency-groups]
+dev = [
+    "homeassistant==2026.2.1",
+]
+
+[homeassistant]
+domain = "bbox"
+documentation = "https://www.home-assistant.io/integrations/bbox"
+name = "Bbox"
+config_flow = true
+iot_class = "local_polling"
+integration_type = "device"
+
