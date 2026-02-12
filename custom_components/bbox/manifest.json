@@ -2,14 +2,17 @@
   "domain": "bbox",
   "doucmentation": "https://www.home-assistant.io/integrations/bbox",
   "name": "Bbox",
-  "version": "0.0.0",
+  "version": "v1.0.0",
   "requirements": [
     "aiobbox==0.3.1"
   ],
   "config_flow": true,
   "iot_class": "local_polling",
   "codeowners": [],
-  "loggers": ["custom_components.bbox", "aiobbox"],
+  "loggers": [
+    "custom_components.bbox",
+    "aiobbox"
+  ],
   "integration_type": "device",
   "single_config_entry": true
 }

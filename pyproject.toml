@@ -1,6 +1,6 @@
 [project]
 name = "ha-integration-bbox"
-version = "0.0.0"
+version = "1.0.0"
 description = "Bbox Home Assistant integration"
 readme = "README.md"
 requires-python = ">=3.13.2"
