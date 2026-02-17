@@ -32,10 +32,11 @@ On the contrary, the Bbox immediately reports devices newly connected, so they s
 
 ### Start
 
-Use `docker-compose up` command to start a Home Assistant locally.
+To start Home Assistant instance with the integration, run the following command :\
+`uv run homeassistant -c .homeassistant --debug --open-ui`
 
 ### Release
 
-This script allow to release a version of the project (Bump project version, update manifest version and create a git tag).\
-Use following command : `uv run ./scripts/release.py <version>` where `version` is the version number with semantic versioning.
+To release a new version of the project (Bump project version, update manifest version and create a git tag), run the following command :\
+`uv run ./scripts/release.py <version>` where `version` is the version number with semantic versioning.
 
