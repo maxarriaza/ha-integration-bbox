@@ -27,7 +27,7 @@ class BboxDataUpdateCoordinator(DataUpdateCoordinator[BboxData]):
         coordinator.async_config_entry_first_refresh.
         """
         self.logger.debug("Setup coordinator")
-        self._client = BboxApi(password=self.config_entry.data[CONF_PASSWORD], timeout=1)
+        self._client = BboxApi(password=self.config_entry.data[CONF_PASSWORD], timeout=10)
 
     async def _async_update_data(self):
         """Fetch data from API endpoint.
