@@ -2,7 +2,7 @@
   "domain": "bbox",
   "doucmentation": "https://www.home-assistant.io/integrations/bbox",
   "name": "Bbox",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "requirements": [
     "aiobbox==0.3.1"
   ],
