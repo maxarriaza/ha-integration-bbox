@@ -45,29 +45,28 @@ class BboxDataUpdateCoordinator(DataUpdateCoordinator[BboxData]):
 
             # Get router information
             router_info = await self._client.get_router_info()
+            bbox_information = BboxInformation(
+                serial_number=router_info.serialnumber,
+                model_name=router_info.modelname,
+                software_version=router_info.running.version,
+            )
 
             # Get router hosts
             hosts = await self._client.get_hosts()
+            bbox_hosts = [
+                BboxHost(
+                    hostname=host.hostname,
+                    mac_address=host.macaddress,
+                    ip_address=host.ipaddress,
+                    is_connected=host.active,
+                    manufacturer=host.informations.manufacturer,
+                    model_name=host.informations.model,
+                    software_version=host.informations.version
+                ) for host in hosts
+            ]
 
             # Return data transfer object
-            return BboxData(
-                information=BboxInformation(
-                    serial_number=router_info.serialnumber,
-                    model_name=router_info.modelname,
-                    software_version=router_info.running.version,
-                ),
-                hosts=[
-                    BboxHost(
-                        hostname=host.hostname,
-                        mac_address=host.macaddress,
-                        ip_address=host.ipaddress,
-                        is_connected=host.active,
-                        manufacturer=host.informations.manufacturer,
-                        model_name=host.informations.model,
-                        software_version=host.informations.version
-                    ) for host in hosts
-                ]
-            )
+            return BboxData(information=bbox_information, hosts=bbox_hosts)
 
         except BboxTimeoutError as err:
             await self._client.close()
