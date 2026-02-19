@@ -1,4 +1,3 @@
-import json
 import logging
 from datetime import timedelta
 
@@ -7,8 +6,6 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_PASSWORD
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
-from pydantic.v1 import ValidationError
-from pyric.utils.hardware import manufacturer
 
 from .const import DOMAIN
 from .model import BboxData, BboxHost, BboxInformation
